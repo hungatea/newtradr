@@ -4,6 +4,11 @@ export default function Question(props) {
 
     const [selected, setSelected] = useState(false);
     const [answer, setAnswer] = useState('');
+    const [data, setData] = useState(() => {
+      const saved = localStorage.getItem("responses");
+      const initialValue = JSON.parse(saved);
+      return initialValue || '';
+    })
 
     const grid = props['question']['layout'] === 'grid';
 
