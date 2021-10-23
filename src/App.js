@@ -51,6 +51,7 @@ const sampleQuestion = [
     "I don't drive"
   ]  
 },
+{
     'id': 4,
     'question' : 'How important is it to you that you have a lot of money when you str older?',
     'type' : 'selectResponse',
