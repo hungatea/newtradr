@@ -5,6 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to right, #00bfb2, #00cb70);
+}
+
+.logo {
+  width: 250px;
+  height: auto;
+  position: fixed;
+  top: 74%;
+  right: 5%;
+}
+
+.main-container {
+  max-width: 800px;
+  margin: auto;
 }
 
 code {
