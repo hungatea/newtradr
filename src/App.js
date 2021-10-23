@@ -84,7 +84,7 @@ const sampleQuestion = [
   'type' : 'selectResponse',
   'layout' : 'column',
   'options' : [
-    'Se it now.',
+    'Sell it now.',
     'Find someone on the same boat for ideas.',
     'Wait till after the second month has passed to monitor the price.',
     'Wait until the price increases.'
