@@ -1,15 +1,30 @@
 import logo from './newtradr-logo.svg';
 import Question from './Question.js';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+
+
 
 function App() {
 
   const [completed, setCompleted] = useState(false);
-  const [question, setQuestion] = useState(0);
+  const [question, setQuestion] = useState(() => {
+    const saved = localStorage.getItem("progress");
+    const initialValue = JSON.parse(saved);
+    return initialValue || 0;
+  })
 
-  function handleQuestionChange() {
-    setQuestion(question + 1);
+  function handleQuestionChange(x) {
+    if (x === 1) {
+    setQuestion(question + x);
+    } else {
+      setQuestion(0)
+    }
   }
+
+  useEffect(() => {
+    localStorage.setItem("progress", JSON.stringify(question))
+  }, [question]);
 
   return (
     <>
@@ -53,14 +68,14 @@ const sampleQuestion = [
 },
 {
     'id': 4,
-    'question' : 'How important is it to you that you have a lot of money when you str older?',
+    'question' : 'How important is it to you that you have a lot of money when you are older?',
     'type' : 'selectResponse',
     'layout' : 'column',
     'options' : [
-      'Very-I aim to have an expensive lifestyle.',
-      'Somewhat-I want to make sure I can live where I want.',
-      'A bit-I do not want to worry about money.',
-      'Not very much-So long as I am doing what makes me happy.'
+      'Very—I aim to have an expensive lifestyle.',
+      'Somewhat—I want to make sure I can live where I want.',
+      'A bit—I do not want to worry about money.',
+      'Not very much, so long as I am doing what makes me happy.'
   ]
 },
 {
@@ -69,7 +84,7 @@ const sampleQuestion = [
   'type' : 'selectResponse',
   'layout' : 'column',
   'options' : [
-    'To infinity and beyond(more than 100 word per minute)',
+    'To infinity and beyond (over 100 words per minute)',
     'Average (between 60 and 100 words per minute)',
     'Meh (less than 60 words per minute)'
 ]
@@ -87,14 +102,25 @@ const sampleQuestion = [
 },
 {
   'id': 6,
-  'question' : 'Lets just say current stock has a price of $50 per share, and its value has decreased to $42 per share only. If you sel it right now you will ose 8 dollars. 55% o the market analysts say the price will go up to $100 per share 3 months later, and 45% say it will go down evern futher by 10 dollars per month. What is your move here?',
+  'question' : "What are some things that you're interested in? Please choose three.",
   'type' : 'selectResponse',
-  'layout' : 'column',
+  'layout' : 'imageGrid',
   'options' : [
-    'Se it now.',
-    'Find someone on the same boat for ideas.',
-    'Wait till after the second month has passed to monitor the price.',
-    'Wait until the price increases.'
+"Biology",
+"Cars",
+"Cryptocurrency",
+"Education",
+"Environment",
+"Fashion",
+"Food",
+"Healthcare",
+"Hiking",
+"Music",
+"Social Media",
+"Space",
+"Tech",
+"TV & Movies",
+"Video Games"
 ]
-}
+},
 ]
