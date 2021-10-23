@@ -4,7 +4,7 @@ function App() {
   return (
     <>
     <div className='main-container'>
-    <h1>Team SKAD Let's Gooooooo</h1>
+    <h1>Team SKAD Let's</h1>
     </div>
     <img src={logo} className='logo' />
     </>
