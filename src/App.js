@@ -1,13 +1,20 @@
 import logo from './newtradr-logo.svg';
-import TextAnswer from './TextAnswer.js';
-import SelectAnswer from './SelectAnswer.js';
+import Question from './Question.js';
+import React, { useState } from "react";
 
 function App() {
+
+  const [completed, setCompleted] = useState(false);
+  const [question, setQuestion] = useState(0);
+
+  function handleQuestionChange() {
+    setQuestion(question + 1);
+  }
 
   return (
     <>
     <div className='main-container'>
-      <SelectAnswer question={sampleQuestion[2]}/>
+      <Question question={sampleQuestion[question]} onQuestionChange={handleQuestionChange}/>
     </div>
     <img src={logo} className='logo' />
     </>

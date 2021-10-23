@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SelectAnswer(props) {
+export default function Question(props) {
 
     const grid = props['question']['layout'] === 'grid';
 
@@ -8,7 +8,11 @@ export default function SelectAnswer(props) {
     <>
     <div className='q-container'>
       <h2>{props['question']['question']}</h2>
-      
+    {props['question']['type'] === 'textResponse' &&
+    <>
+        <input className='text-answer' autoFocus type='text' name='name' placeholder='Type your response here...' />
+      </>
+}
     <div className={`${grid ? 'grid-container' : 'column-container'}`}>
         {props['question']['options'].map(o => {
             return <div className={`${grid ? 'grid-option' : 'column-option'}`} key={o}>
