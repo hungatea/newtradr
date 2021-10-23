@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <div className='main-container'>
-      <SelectAnswer question={sampleQuestion[2]}/>
+      <TextAnswer question={sampleQuestion[0]}/>
     </div>
     <img src={logo} className='logo' />
     </>
