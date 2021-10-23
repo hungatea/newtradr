@@ -129,9 +129,12 @@ h2 {
   font-size: 1.1rem;
 }
 
+.unselected {
+  opacity: 0.5;
+}
+
 .help-text {
   font-weight: bold;
-  opacity: 0.5;
   color: white;
 }
 
@@ -142,7 +145,7 @@ h2 {
 }
 
 .highlighted {
-  color: rgba(255,255,255, 0.5);
+  color: white;
   border-radius: 10px;
   padding-left: 8px;
   padding-right: 8px;
