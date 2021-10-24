@@ -3,40 +3,31 @@ import React, { useState, useEffect, useRef } from "react";
 //images
 
 import Tree from './Tree_88398.png'
-import Banana from './banana_1262865.png'
-import Clothes from './Clothes_552721.png'
-import Game from './Video_Game_4146469.png'
 import Film from './Film_1043323.png'
-import Biology from './Biology_3655198.png'
 import Space from './Space_4038095.png'
 import Social from './Social_4337981.png'
 import iPhone from './iPhone_4051913.png'
-import Crypto from './crypto_3663299.png'
-import Education from './education_3401411.png'
 import Car from './Car_2603312.png'
 import Healthcare from './Healthcare_2135212.png'
-import Music from './Music_4341623.png'
 import Hiking from './Hiking_4303095.png'
+import Finance from './finance_998012.png'
+import Gas from './Gas_3553248.png'
+import House from './House_3074794.png'
+import Shop from './Shop_2729655.png'
 
 const icons = [
-  Biology,
   Car,
-  Crypto,
-  Education,
-  Tree,
-
-  Clothes,
-  Banana,
-  Healthcare,
-
+  Shop,
   Hiking,
-  Music,
+  Film,
+  Tree,
+  Finance,
+  Gas,
+  Healthcare,
+  House,
   Social,
   Space,
-  iPhone,
-  Film,
-
-  Game,
+  iPhone
 ]
 
 export default function Question(props) {
@@ -147,6 +138,8 @@ export default function Question(props) {
       }
     })
 
+
+
   return (
     <>
     <div className='q-container'>
@@ -178,10 +171,14 @@ export default function Question(props) {
               e.preventDefault();
               handleResponseClick(o)
             }}>
-                {image &&
+                {image ?
+                <>
                 <img className='icon' src={icons[index]} />
-        }
+                <p>{o}</p>
+                </>
+                :
                 <p>{o['text']}</p>
+        }
                 </div>
                 </>
         })}

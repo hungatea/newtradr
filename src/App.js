@@ -233,21 +233,18 @@ const sampleQuestion = [
   'type' : 'selectResponse',
   'layout' : 'imageGrid',
   'options' : [
-"Biology",
 "Cars",
-"Cryptocurrency",
-"Education",
+"Consumer Goods",
+"Earth Sciences",
+"Entertainment",
 "Environment",
-"Fashion",
-"Food",
+"Finance",
+"Gas & Energy",
 "Healthcare",
-"Hiking",
-"Music",
-"Social Media",
-"Space",
-"Tech",
-"TV & Movies",
-"Video Games"
+"Housing",
+"Social",
+"Space & Logistics",
+"Tech"
 ]
 },
 {
