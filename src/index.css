@@ -26,6 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to right, #00bfb2, #00cb70);
+  overscroll-behavior-y: none;
 }
 
 .logo {

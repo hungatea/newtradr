@@ -47,6 +47,10 @@ export default function Question(props) {
     const [answer, setAnswer] = useState('');
     const [multiAnswer, setMultiAnswer] = useState([]);
 
+    const [conservative, setConservative] = useState(0);
+    const [moderate, setModerate] = useState(0);
+    const [aggressive, setAggressive] = useState(0);
+
     const inputRef = useRef();
 
     const grid = props['question']['layout'] === 'grid';
@@ -58,6 +62,11 @@ export default function Question(props) {
           setSave(inputRef.current.value)
         } else if (props['question']['id'] === 3) {
           setInvest(inputRef.current.value)
+        }
+        if (props['question']['id'] > 3) {
+        setConservative(conservative + answer['risk'][2]);
+        setModerate(moderate + answer['risk'][1]);
+        setAggressive(aggressive + answer['risk'][0]);
         }
         props.onQuestionChange(1);
         if (props['question']['id'] < 3) {
@@ -108,6 +117,8 @@ export default function Question(props) {
       if (answer !== x) {
         
         setAnswer(x);
+
+
         setSelected(true)
       }
       else {
@@ -123,6 +134,10 @@ export default function Question(props) {
       setSave(0);
       setAnswer('');
       setMultiAnswer([]);
+
+      setConservative(0);
+      setModerate(0);
+      setAggressive(0);
     }
 
     useEffect(() => {
@@ -140,7 +155,8 @@ export default function Question(props) {
         handleStartOver();
         e.preventDefault();
       }}>Start Over</button>
-      <h2>{`${props['question']['question']} ${props['question']['id'] === 5 ? `$${invest / 10}?` : ''}`}</h2>
+      
+      <h2>{`${props['question']['question']} ${props['question']['id'] === 5 ? `$${Math.round(invest / 10)}?` : ''}`}</h2>
     {props['question']['type'] === 'textResponse' &&
     <>
 
@@ -165,13 +181,13 @@ export default function Question(props) {
                 {image &&
                 <img className='icon' src={icons[index]} />
         }
-                <p>{o}</p>
+                <p>{o['text']}</p>
                 </div>
                 </>
         })}
     </div>
 }
-    {props['question']['id'] !== 11 &&
+    {props['question']['id'] !== 14 &&
     <div className={`help-text-container ${(selected === false && props['question']['type'] !== 'noResponse') && 'unselected'}`}>
       <div className='help-text'>
       <p style={{marginRight:"8px"}}>Press</p>
