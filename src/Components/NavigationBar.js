@@ -6,7 +6,7 @@ function Navigation() {
     return (
       <>
       <div className="navigation">
-          <div class="nav-container">
+          <div class="nav-container1">
                   <Link class="nav-link" to="/">
                     <h3>Home</h3>
                   </Link>
@@ -16,7 +16,7 @@ function Navigation() {
                     <h3>About Us</h3>
                   </Link>
                   </div>
-                <div class="nav-container">
+                <div class="nav-container1">
                   <Link class="nav-link" to="/survey">
                     <h3>Survey</h3>
                   </Link>

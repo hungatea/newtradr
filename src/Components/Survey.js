@@ -19,6 +19,9 @@ function App() {
   return (
     <>
     <div className='main-container'>
+        <div className='phone'>
+          Sorry, this tool is currently only enabled to work on desktop devices.
+        </div>
         <Question question={sampleQuestion[question]} onQuestionChange={handleQuestionChange}/>
       
     </div>

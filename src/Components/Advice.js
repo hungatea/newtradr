@@ -34,8 +34,7 @@ export default function Advice(props) {
     <div className='advice-container'>
       <h2>{`Thanks, ${props.name}!`}</h2>
       <br/>
-      <h2>{`Based on your responses, you are ready to
-            take on a ${risk} amount of risk.`}</h2>
+      <h2>Based on your responses, you are ready to take on a <a className='risk-level' >{risk}</a> amount of risk.</h2>
       <p className='advice'>{`You will be best off investing in companies that ${riskP}`}
       </p>
       <br/>
