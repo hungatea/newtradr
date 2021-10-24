@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Advice from './Advice.js';
 
 //images
 
@@ -37,6 +38,7 @@ export default function Question(props) {
     const [save, setSave] = useState(0);
     const [answer, setAnswer] = useState('');
     const [multiAnswer, setMultiAnswer] = useState([]);
+    const [name, setName] = useState('');
 
     const [conservative, setConservative] = useState(0);
     const [moderate, setModerate] = useState(0);
@@ -47,9 +49,13 @@ export default function Question(props) {
     const grid = props['question']['layout'] === 'grid';
     const image = props['question']['layout'] === 'imageGrid';
 
+
     function handleKeyPress(event) {
       if (event.which === 13 && selected) {
-        if (props['question']['id'] === 2) {
+        if (props['question']['id'] === 1) {
+          setName(inputRef.current.value)
+        }
+        else if (props['question']['id'] === 2) {
           setSave(inputRef.current.value)
         } else if (props['question']['id'] === 3) {
           setInvest(inputRef.current.value)
@@ -90,6 +96,11 @@ export default function Question(props) {
       return array3;
     }
 
+    function maxRisk(array) {
+      let max = Math.max(...array);
+      return array.indexOf(max);
+    }
+
     function handleResponseClick(x) {
       if (image) {
         if (multiAnswer.includes(x)) {
@@ -108,8 +119,6 @@ export default function Question(props) {
       if (answer !== x) {
         
         setAnswer(x);
-
-
         setSelected(true)
       }
       else {
@@ -125,6 +134,7 @@ export default function Question(props) {
       setSave(0);
       setAnswer('');
       setMultiAnswer([]);
+      setName('');
 
       setConservative(0);
       setModerate(0);
@@ -141,17 +151,19 @@ export default function Question(props) {
 
 
   return (
-    <>
+
     <div className='q-container'>
       <button onClick={(e) => {
         props.onQuestionChange(0)
         handleStartOver();
         e.preventDefault();
       }}>Start Over</button>
-      
+
+      {props['question']['id'] < 14 &&
+      <>
       <h2>{`${props['question']['question']} ${props['question']['id'] === 5 ? `$${Math.round(invest / 10)}?` : ''}`}</h2>
     {props['question']['type'] === 'textResponse' &&
-    <>
+        <>
 
         <input className='text-answer' autoFocus type='text' ref={inputRef} name='name' onKeyPress={(event) => {
         if (props['question']['id'] === 2 || props['question']['id'] === 3) {
@@ -160,7 +172,7 @@ export default function Question(props) {
         }}
       }} onChange={handleResponseChange}
           placeholder={`${props['question']['id'] > 1 ? '$0' : 'Type your response here...'}`}/>
-      </>
+        </>
     }
     {props['question']['type'] !== 'textResponse' &&
     <div className={`${(grid || image) ? 'grid-container' : 'column-container'}`}>
@@ -183,8 +195,7 @@ export default function Question(props) {
                 </>
         })}
     </div>
-}
-    {props['question']['id'] !== 14 &&
+    }
     <div className={`help-text-container ${(selected === false && props['question']['type'] !== 'noResponse') && 'unselected'}`}>
       <div className='help-text'>
       <p style={{marginRight:"8px"}}>Press</p>
@@ -196,8 +207,11 @@ export default function Question(props) {
       <p style={{marginRight:"0px"}}>to continue</p>
       </div>
       </div>
-}
-    </div>
     </>
+    }
+    {props['question']['id'] === 14 &&
+    <Advice name={name} risk={maxRisk([conservative,moderate,aggressive])} interests={multiAnswer}/>
+    }
+    </div>
   );
 }

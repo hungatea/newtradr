@@ -29,7 +29,8 @@ function App() {
   return (
     <>
     <div className='main-container'>
-      <Question question={sampleQuestion[question]} onQuestionChange={handleQuestionChange}/>
+        <Question question={sampleQuestion[question]} onQuestionChange={handleQuestionChange}/>
+      
     </div>
     <img src={logo} className='logo' />
     </>
@@ -41,7 +42,7 @@ export default App;
 const sampleQuestion = [
 {
   'id' : 1,
-  'question' : 'What is your name?',
+  'question' : "What's your name?",
   'type' : 'textResponse',
   'layout' : '',
   'options' : []
@@ -249,9 +250,16 @@ const sampleQuestion = [
 },
 {
   'id' : 14,
-  'question' : "[investment advice]",
+  'question' : "",
   'type' : 'noResponse',
   'layout' : 'text',
   'options' : []
 },
+{
+  'id' : 15,
+  'question' : "",
+  'type' : 'noResponse',
+  'layout' : 'text',
+  'options' : []
+}
 ]

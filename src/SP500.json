@@ -1,0 +1,331 @@
+{
+    "Conservative": [
+        {
+            "Sector": "Entertainment",
+            "Symbol": "NFLX",
+            "Name": "Netflix",
+            "Description": "streaming company with varied products and moderate growth,",
+            "Market Capitalization": "294.23B",
+            "1-Year % Growth": "36.15"
+        },
+
+        {
+            "Sector": "Cars",
+            "Symbol": "TSLA",
+            "Name": "Tesla",
+            "Description": "full-electric vehicle company with extremely high growth and",
+            "Market Capitalization": "900.60B",
+            "1-Year % Growth": "116.27"
+        },
+
+        {
+            "Sector": "Consumer Goods",
+            "Symbol": "WMT",
+            "Name": "Walmart",
+            "Description": "large established retail company",
+            "Market Capitalization": "413.65B",
+            "1-Year % Growth": "3.12"
+        },
+
+        {
+            "Sector": "Gasoline",
+            "Symbol": "XOM",
+            "Name": "Exxon Mobil",
+            "Description": "global gas and oil company with high growth and",
+            "Market Capitalization": "267.22B",
+            "1-Year % Growth": "84.78"
+        },
+
+        {
+            "Sector": "Finance",
+            "Symbol": "BRK.A",
+            "Name": "Berkshire Hathaway",
+            "Description": "conglomerate holding company",
+            "Market Capitalization": "655.01B",
+            "1-Year % Growth": "35.98"
+        },
+
+        {
+            "Sector": "Healthcare",
+            "Symbol": "JNJ",
+            "Name": "Johnson & Johnson",
+            "Description": "large-scale pharmaceuticals developer",
+            "Market Capitalization": "430.99B",
+            "1-Year % Growth": "12.72"
+        },
+
+        {
+            "Sector": "Space & Travel",
+            "Symbol": "UPS",
+            "Name": "United Parcel Service",
+            "Description": "shipping and supply management company",
+            "Market Capitalization": "177.53B",
+            "1-Year % Growth": "18.56"
+        },
+
+        {
+            "Sector": "Tech",
+            "Symbol": "AAPL",
+            "Name": "Apple",
+            "Description": "renowned consumer electronics manufacturer",
+            "Market Capitalization": "2457.87B",
+            "1-Year % Growth": "29.25"
+        },
+
+        {
+            "Sector": "Earth Sciences",
+            "Symbol": "LIN",
+            "Name": "Linde PLC",
+            "Description": "global multinational chemical and industrial gas company with",
+            "Market Capitalization": "162.23B",
+            "1-Year % Growth": "34.1"
+        },
+
+        {
+            "Sector": "Housing",
+            "Symbol": "AMT",
+            "Name": "American Tower",
+            "Description": "real estate investment trust",
+            "Market Capitalization": "129.46B",
+            "1-Year % Growth": "19.66"
+        },
+
+        {
+            "Sector": "Environment",
+            "Symbol": "NEE",
+            "Name": "NextEra Energy",
+            "Description": "renewable electric energy company",
+            "Market Capitalization": "165.61B",
+            "1-Year % Growth": "11.42"
+        },
+
+        {
+            "Sector": "Social",
+            "Symbol": "ATVI",
+            "Name": "Activision Blizzard",
+            "Description": "popular video game company with an established product line and",
+            "Market Capitalization": "61.65B",
+            "1-Year % Growth": "-2.18"
+        }
+    ],
+
+    "Moderate": [
+        {
+            "Sector": "Entertainment",
+            "Symbol": "NFLX",
+            "Name": "Netflix",
+            "Description": "streaming company with varied products and moderate growth,",
+            "Market Capitalization": "294.23B",
+            "1-Year % Growth": "36.15"
+        },
+
+        {
+            "Sector": "Cars",
+            "Symbol": "TSLA",
+            "Name": "Tesla",
+            "Description": "full-electric vehicle company with extremely high growth and",
+            "Market Capitalization": "900.60B",
+            "1-Year % Growth": "116.27"
+        },
+
+        {
+            "Sector": "Consumer Goods",
+            "Symbol": "EL",
+            "Name": "Estée Lauder",
+            "Description": "skincare/makeup manufacturer and marketer",
+            "Market Capitalization": "118.37B",
+            "1-Year % Growth": "39.28"
+        },
+
+        {
+            "Sector": "Gasoline",
+            "Symbol": "XOM",
+            "Name": "Exxon Mobil",
+            "Description": "global gas and oil company with high growth and",
+            "Market Capitalization": "267.22B",
+            "1-Year % Growth": "84.78"
+        },
+
+        {
+            "Sector": "Finance",
+            "Symbol": "BRK.A",
+            "Name": "Berkshire Hathaway",
+            "Description": "conglomerate holding company",
+            "Market Capitalization": "655.01B",
+            "1-Year % Growth": "35.98"
+        },
+
+        {
+            "Sector": "Healthcare",
+            "Symbol": "UNH",
+            "Name": "UnitedHealth Group",
+            "Description": "large healthcare and insurance company",
+            "Market Capitalization": "423.52B",
+            "1-Year % Growth": "35.86"
+        },
+
+        {
+            "Sector": "Space & Travel",
+            "Symbol": "RTX",
+            "Name": "Raytheon Technologies",
+            "Description": "defense and aerospace conglomerate",
+            "Market Capitalization": "138.51B",
+            "1-Year % Growth": "46.81"
+        },
+
+        {
+            "Sector": "Tech",
+            "Symbol": "MSFT",
+            "Name": "Microsoft",
+            "Description": "global electronics manufacturer with a focus on cloud-products and enterprise solutions,",
+            "Market Capitalization": "2321.14B",
+            "1-Year % Growth": "42.98"
+        },
+
+        {
+            "Sector": "Earth Sciences",
+            "Symbol": "LIN",
+            "Name": "Linde PLC",
+            "Description": "global multinational chemical and industrial gas company with",
+            "Market Capitalization": "162.23B",
+            "1-Year % Growth": "34.1"
+        },
+
+        {
+            "Sector": "Housing",
+            "Symbol": "PLD",
+            "Name": "Prologis",
+            "Description": "real estate investment trust providing logistics services",
+            "Market Capitalization": "106.45B",
+            "1-Year % Growth": "39.48"
+        },
+
+        {
+            "Sector": "Environment",
+            "Symbol": "EXC",
+            "Name": "Exelon",
+            "Description": "nuclear and electric energy of moderate growth",
+            "Market Capitalization": "50.17",
+            "1-Year % Growth": "21.59"
+        },
+
+        {
+            "Sector": "Social",
+            "Symbol": "NVDA",
+            "Name": "NVIDIA",
+            "Description": "major manufacturer of graphic processing units for gaming and professional applications",
+            "Market Capitalization": "568.15B",
+            "1-Year % Growth": "67.23"
+        }
+    ],
+
+    "Aggressive": [
+        {
+            "Sector": "Entertainment",
+            "Symbol": "NWS",
+            "Name": "News Class B",
+            "Description": "news, publishing, and broadcasting company with high growth and",
+            "Market Capitalization": "14.30B",
+            "1-Year % Growth": "75.13"
+        },
+
+        {
+            "Sector": "Cars",
+            "Symbol": "TSLA",
+            "Name": "Tesla",
+            "Description": "full-electric vehicle company with extremely high growth and",
+            "Market Capitalization": "900.60B",
+            "1-Year % Growth": "116.27"
+        },
+
+        {
+            "Sector": "Consumer Goods",
+            "Symbol": "EL",
+            "Name": "Estée Lauder",
+            "Description": "skincare/makeup manufacturer and marketer",
+            "Market Capitalization": "118.37B",
+            "1-Year % Growth": "39.28"
+        },
+
+        {
+            "Sector": "Gasoline",
+            "Symbol": "XOM",
+            "Name": "Exxon Mobil",
+            "Description": "global gas and oil company with high growth and",
+            "Market Capitalization": "267.22B",
+            "1-Year % Growth": "84.78"
+        },
+
+        {
+            "Sector": "Finance",
+            "Symbol": "JPM",
+            "Name": "JPMorgan Chase",
+            "Description": "large investment bank with varied products, high growth and",
+            "Market Capitalization": "513.31B",
+            "1-Year % Growth": "65.48"
+        },
+
+        {
+            "Sector": "Healthcare",
+            "Symbol": "LLY",
+            "Name": "Eli Lilly",
+            "Description": "pharmaceuticals developer with high growth and",
+            "Market Capitalization": "233.17",
+            "1-Year % Growth": "71.2"
+        },
+
+        {
+            "Sector": "Space & Travel",
+            "Symbol": "RTX",
+            "Name": "Raytheon Technologies",
+            "Description": "defense and aerospace conglomerate",
+            "Market Capitalization": "138.51B",
+            "1-Year % Growth": "46.81"
+        },
+
+        {
+            "Sector": "Tech",
+            "Symbol": "MSFT",
+            "Name": "Microsoft",
+            "Description": "global electronics manufacturer with a focus on cloud-products and enterprise solutions,",
+            "Market Capitalization": "2321.14B",
+            "1-Year % Growth": "42.98"
+        },
+
+        {
+            "Sector": "Earth Sciences",
+            "Symbol": "FCX",
+            "Name": "Freeport-McMoRan",
+            "Description": "mining company of modest growth",
+            "Market Capitalization": "55.30B",
+            "1-Year % Growth": "105.17"
+        },
+
+        {
+            "Sector": "Housing",
+            "Symbol": "SPG",
+            "Name": "Simon Property Group",
+            "Description": "large real estate investment trust consisting primarily of shopping malls and outlets,",
+            "Market Capitalization": "47.69B",
+            "1-Year % Growth": "117.02"
+        },
+
+        {
+            "Sector": "Environment",
+            "Symbol": "EXC",
+            "Name": "Exelon",
+            "Description": "nuclear and electric energy of moderate growth",
+            "Market Capitalization": "50.17",
+            "1-Year % Growth": "21.59"
+        },
+
+        {
+            "Sector": "Social",
+            "Symbol": "MTCH",
+            "Name": "Match Group",
+            "Description": "social media company that operates various online dating services,",
+            "Market Capitalization": "46.87B",
+            "1-Year % Growth": "40.75"
+        }
+    ]
+}
