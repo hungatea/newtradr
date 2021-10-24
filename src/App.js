@@ -8,11 +8,7 @@ import React, { useState, useEffect } from "react";
 function App() {
 
   const [completed, setCompleted] = useState(false);
-  const [question, setQuestion] = useState(() => {
-    const saved = localStorage.getItem("progress");
-    const initialValue = JSON.parse(saved);
-    return initialValue || 0;
-  })
+  const [question, setQuestion] = useState(0)
 
   function handleQuestionChange(x) {
     if (x === 1) {
@@ -21,10 +17,6 @@ function App() {
       setQuestion(0)
     }
   }
-
-  useEffect(() => {
-    localStorage.setItem("progress", JSON.stringify(question))
-  }, [question]);
 
   return (
     <>
