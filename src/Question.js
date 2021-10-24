@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 //images
 
@@ -42,17 +42,32 @@ const icons = [
 export default function Question(props) {
 
     const [selected, setSelected] = useState(false);
-    const [risk, setRisk] = useState(0);
+    const [invest, setInvest] = useState(0);
+    const [save, setSave] = useState(0);
     const [answer, setAnswer] = useState('');
     const [multiAnswer, setMultiAnswer] = useState([]);
+
+    const inputRef = useRef();
 
     const grid = props['question']['layout'] === 'grid';
     const image = props['question']['layout'] === 'imageGrid';
 
     function handleKeyPress(event) {
       if (event.which === 13 && selected) {
+        if (props['question']['id'] === 2) {
+          setSave(inputRef.current.value)
+        } else if (props['question']['id'] === 3) {
+          setInvest(inputRef.current.value)
+        }
         props.onQuestionChange(1);
+        if (props['question']['id'] < 3) {
+          inputRef.current.value = '';
+        }
         setSelected(false);
+      } else if (event.which === 13 && props['question']['type'] === 'noResponse') {
+        props.onQuestionChange(1);
+      } else if (event.which === 13 && multiAnswer.length === 3) {
+        props.onQuestionChange(1);
       }
     }
 
@@ -79,6 +94,7 @@ export default function Question(props) {
       if (image) {
         if (multiAnswer.includes(x)) {
           setMultiAnswer(removeArray(multiAnswer,x));
+          setSelected(false);
         } else {
           if (multiAnswer.length === 2) {
             setMultiAnswer(addArray(multiAnswer,x))
@@ -88,16 +104,25 @@ export default function Question(props) {
           }
         }
       }
-
       else if (!image) {
       if (answer !== x) {
+        
         setAnswer(x);
         setSelected(true)
-      } else {
+      }
+      else {
         setAnswer('');
         setSelected(false)
       }
     }
+    }
+
+    function handleStartOver() {
+      setSelected(false);
+      setInvest(0);
+      setSave(0);
+      setAnswer('');
+      setMultiAnswer([]);
     }
 
     useEffect(() => {
@@ -112,20 +137,26 @@ export default function Question(props) {
     <div className='q-container'>
       <button onClick={(e) => {
         props.onQuestionChange(0)
+        handleStartOver();
         e.preventDefault();
       }}>Start Over</button>
-      <h2>{props['question']['question']}</h2>
+      <h2>{`${props['question']['question']} ${props['question']['id'] === 5 ? `$${invest / 10}?` : ''}`}</h2>
     {props['question']['type'] === 'textResponse' &&
     <>
-        <input className='text-answer' autoFocus type='text' name='name' onChange={handleResponseChange}
-          placeholder='Type your response here...' />
+
+        <input className='text-answer' autoFocus type='text' ref={inputRef} name='name' onKeyPress={(event) => {
+        if (props['question']['id'] === 2 || props['question']['id'] === 3) {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }}
+      }} onChange={handleResponseChange}
+          placeholder={`${props['question']['id'] > 1 ? '$0' : 'Type your response here...'}`}/>
       </>
     }
     {props['question']['type'] !== 'textResponse' &&
     <div className={`${(grid || image) ? 'grid-container' : 'column-container'}`}>
         {props['question']['options'].map((o, index) => {
             return <>
-            <a href=''>
               <div className={`${(grid || image) ? 'grid-option' : 'column-option'}
                                ${(answer === o || multiAnswer.includes(o)) ? 'selected' : ''}`} key={index} onClick={(e) => {
               e.preventDefault();
@@ -136,13 +167,12 @@ export default function Question(props) {
         }
                 <p>{o}</p>
                 </div>
-                </a>
                 </>
         })}
     </div>
 }
-
-    <div className={`help-text-container ${selected === false && 'unselected'}`}>
+    {props['question']['id'] !== 11 &&
+    <div className={`help-text-container ${(selected === false && props['question']['type'] !== 'noResponse') && 'unselected'}`}>
       <div className='help-text'>
       <p style={{marginRight:"8px"}}>Press</p>
       </div>
@@ -153,6 +183,7 @@ export default function Question(props) {
       <p style={{marginRight:"0px"}}>to continue</p>
       </div>
       </div>
+}
     </div>
     </>
   );

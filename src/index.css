@@ -76,6 +76,7 @@ h2 {
   opacity: 0.8;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
 }
 
 .grid-option:hover {
@@ -117,6 +118,7 @@ a {
   margin-right: 30px;
   opacity: 0.8;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .column-option:hover {
