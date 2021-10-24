@@ -37,7 +37,9 @@ export default function Advice(props) {
       Here are a few companies to check out based on your interests and risk appetite. Click on a company to learn more or click the button below when you are ready to invest!
       </p>
       <div className='button'>
+          <a href='https://www.blackrock.com/us/individual' target='blank'>
           <button className='invest-button'>Start Investing</button>
+          </a>
           </div>
       <div className='company' onClick={() => {
           setExpand1(!expand1)
@@ -135,7 +137,9 @@ export default function Advice(props) {
         }
         
         </div>
-        <p className='advice'>Details</p>
+        <p className='details' style={{marginTop:'500px'}}>
+            Companies are suggested on the basis of weighted risk profile factors as well as quantitative signals including but not limited to: moving day averages, standard deviations of price movements, stochastic oscillators, and YTD performance benchmarked against the SPX. 
+        </p>
     </>
   );
 
