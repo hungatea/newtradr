@@ -161,7 +161,7 @@ export default function Question(props) {
 
       {props['question']['id'] < 14 &&
       <>
-      <h2>{`${props['question']['question']} ${props['question']['id'] === 5 ? `$${Math.round(invest / 10)}?` : ''}`}</h2>
+      <h2>{`${props['question']['question']} ${props['question']['id'] === 5 ? `$${invest > 1 ? Math.round(invest / 10) : 1}?` : ''}`}</h2>
     {props['question']['type'] === 'textResponse' &&
         <>
 
