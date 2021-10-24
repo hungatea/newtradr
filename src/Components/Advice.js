@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SP500 from './SP500.json';
+import Prices from './prices.json';
 
 export default function Advice(props) {
 
@@ -14,6 +15,11 @@ export default function Advice(props) {
     const company1 = SP500[riskJSON[props.risk]].find(s => s['Sector'] === props.interests[0])
     const company2 = SP500[riskJSON[props.risk]].find(s => s['Sector'] === props.interests[1])
     const company3 = SP500[riskJSON[props.risk]].find(s => s['Sector'] === props.interests[2])
+
+    const price1 = Prices.find(s => s['ticker'] === company1['Symbol'])['price'];
+    const price2 = Prices.find(s => s['ticker'] === company2['Symbol'])['price'];
+    const price3 = Prices.find(s => s['ticker'] === company3['Symbol'])['price'];
+
 
     const riskLevels2 = [
         'match market returns, on average. These stocks may vary from day-to-day, but over time should show healthy, moderate growth.',
@@ -57,7 +63,7 @@ export default function Advice(props) {
           </div>
           <div className='company-right'>
               <div className='company-ticker'>
-                  $100
+                  {`$${price1}`}
               </div>
               <div className='company-name'>
                   Current Price
@@ -89,7 +95,7 @@ export default function Advice(props) {
           </div>
           <div className='company-right'>
               <div className='company-ticker'>
-                  $100
+              {`$${price2}`}
               </div>
               <div className='company-name'>
                   Current Price
@@ -120,7 +126,7 @@ export default function Advice(props) {
           </div>
           <div className='company-right'>
               <div className='company-ticker'>
-                  $100
+              {`$${price3}`}
               </div>
               <div className='company-name'>
                   Current Price
