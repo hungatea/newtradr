@@ -10,6 +10,11 @@ function Survey(){
         setQuestion(question + 1);
     }
 
+    
+    useEffect(() => {
+    localStorage.setItem("progress", JSON.stringify(question))
+    }, [question]);
+
     return (
         <>
         <div className='main-container'>
@@ -24,80 +29,219 @@ export default Survey;
 
 const sampleQuestion = [
     {
-        'id' : 1,
-        'question' : 'What is your name?',
-        'type' : 'textResponse',
-        'layout' : '',
-        'options' : []
+      'id' : 1,
+      'question' : 'What is your name?',
+      'type' : 'textResponse',
+      'layout' : '',
+      'options' : []
     },
     {
-        'id' : 2,
-        'question' : 'A friend asks you to bet on the flip of a coin. Heads, you win $100. Tails, you lose $100. Do you...',
-        'type' : 'selectResponse',
-        'layout' : 'grid',
-        'options' : [
-            'Take the bet—why not make some extra money!',
-            "Walk away—it's not worth the risk"
+      'id' : 2,
+      'question' : 'How much money do you have saved?',
+      'type' : 'textResponse',
+      'layout' : '',
+      'options' : []
+    },
+    {
+      'id' : 3,
+      'question' : 'How much money do you want to invest?',
+      'type' : 'textResponse',
+      'layout' : '',
+      'options' : []
+    },
+    {
+      'id' : 4,
+      'question' : "Great! Now we'd like to ask a few questions to get to know you better.",
+      'type' : 'noResponse',
+      'layout' : 'text',
+      'options' : []
+    },
+    {
+      'id' : 5,
+      'question' : 'A friend asks you to bet on the flip of a coin. Would you bet ',
+      'type' : 'selectResponse',
+      'layout' : 'column',
+      'options' : [
+        {
+          'text' : 'Take the bet—why not make some extra money!',
+          'risk' : [1,0,0]
+        },
+        {
+          'text' : "Walk away—it's not worth the risk",
+          'risk' : [0,0.3,0.3]
+        } 
         ]
     },
     {
-        'id' : 3,
-        'question' : 'How would others describe your driving?',
-        'type' : 'selectResponse',
-        'layout' : 'column',
-        'options' : [
-            'Slow and safe',
-            'Normal, maybe a bit on the slow side',
-            'A little bit fast',
-            'Probably too fast for most people',
-            "I don't drive"
+      'id' : 6,
+      'question' : 'How would others describe your driving?',
+      'type' : 'selectResponse',
+      'layout' : 'column',
+      'options' : [
+        {
+          'text' : "Slow and safe",
+          'risk' : [0,0,1]
+        }, 
+        {
+          'text' : "Normal, maybe a bit on the slow side",
+          'risk' : [0,0.7,0.3]
+        }, 
+        {
+          'text' : "A little bit fast",
+          'risk' : [0.4,0.6,0]
+        }, 
+        {
+          'text' : "Probably too fast for most people",
+          'risk' : [0.5,0.5,0]
+        }, 
+        {
+          'text' : "I don't drive",
+          'risk' : [0,0,0]
+        } 
       ]  
     },
     {
-        'id': 4,
-        'question' : 'How important is it to you that you have a lot of money when you str older?',
+        'id': 7,
+        'question' : 'How important is it to you that you have a lot of money when you are older?',
         'type' : 'selectResponse',
         'layout' : 'column',
         'options' : [
-            'Very-I aim to have an expensive lifestyle.',
-            'Somewhat-I want to make sure I can live where I want.',
-            'A bit-I do not want to worry about money.',
-            'Not very much-So long as I am doing what makes me happy.'
-        ]
+          {
+            'text' : "Very—I aim to have an expensive lifestyle",
+            'risk' : [0.7,0.3,0]
+          }, 
+          {
+            'text' : "Somewhat—I want to make sure I can live where I want",
+            'risk' : [0,0.6,0.4]
+          }, 
+          {
+            'text' : "A bit—I do not want to worry about money",
+            'risk' : [0.5,0.5,0]
+          }, 
+          {
+            'text' : "Not very much, so long as I am doing what makes me happy",
+            'risk' : [0,0,0]
+          }
+      ]
     },
     {
-        'id': 5,
-        'question' : 'How would you describe your typing speed?',
-        'type' : 'selectResponse',
-        'layout' : 'column',
-        'options' : [
-            'To infinity and beyond(more than 100 word per minute)',
-            'Average (between 60 and 100 words per minute)',
-            'Meh (less than 60 words per minute)'
-        ]
+      'id': 8,
+      'question' : 'How would you describe your typing speed?',
+      'type' : 'selectResponse',
+      'layout' : 'column',
+      'options' : [
+        {
+          'text' : "To infinity and beyond (over 100 words per minute)",
+          'risk' : [0,0,0]
+        },
+        {
+          'text' : "Average (between 60 and 100 words per minute)",
+          'risk' : [0,0,0]
+        },
+        {
+          'text' : "Meh (less than 60 words per minute)",
+          'risk' : [0,0,0]
+        }
+    ]
     },
     {
-        'id': 5,
-        'question' : 'How often do you leave work undone until your deadline?',
-        'type' : 'selectResponse',
-        'layout' : 'column',
-        'options' : [
-            'Always.',
-            'Pretty often.',
-            'Never.'
-        ]
+      'id': 9,
+      'question' : 'Do you prefer chocolate or fruit?',
+      'type' : 'selectResponse',
+      'layout' : 'grid',
+      'options' : [
+        {
+          'text' : "Chocolate",
+          'risk' : [0,0,0]
+        },
+        {
+          'text' : "Fruit",
+          'risk' : [0,0,0]
+        }
+    ]
     },
     {
-        'id': 6,
-        'question' : 'Lets just say current stock has a price of $50 per share, and its value has decreased to $42 per share only. If you sel it right now you will ose 8 dollars. 55% o the market analysts say the price will go up to $100 per share 3 months later, and 45% say it will go down evern futher by 10 dollars per month. What is your move here?',
-        'type' : 'selectResponse',
-        'layout' : 'column',
-        'options' : [
-            'Sell it now.',
-            'Find someone on the same boat for ideas.',
-            'Wait till after the second month has passed to monitor the price.',
-            'Wait until the price increases.'
-        ]
-    }
-]
+      'id': 10,
+      'question' : 'Would you describe yourself as an introvert or an extrovert?',
+      'type' : 'selectResponse',
+      'layout' : 'grid',
+      'options' : [
+        {
+          'text' : "Introvert",
+          'risk' : [0,0.2,0.3]
+        },
+        {
+          'text' : "Extrovert",
+          'risk' : [0.4,0.1,0]
+        }
+    ]
+    },
+    {
+      'id': 11,
+      'question' : 'How often do you leave work unfinished until your deadline?',
+      'type' : 'selectResponse',
+      'layout' : 'grid',
+      'options' : [
+        {
+          'text' : "Always",
+          'risk' : [0.7,0.3,0]
+        },
+        {
+          'text' : "Pretty often",
+          'risk' : [0.6,0.3,0]
+        },
+        {
+          'text' : "Almost never",
+          'risk' : [0,0,0.8]
+        }
+    ]
+    },
+    {
+      'id': 12,
+      'question' : 'How often do you do something because it looks fun (and other people are doing it)?',
+      'type' : 'selectResponse',
+      'layout' : 'grid',
+      'options' : [
+        {
+          'text' : "Very often",
+          'risk' : [0.6,0.4,0]
+        },
+        {
+          'text' : "Sometimes",
+          'risk' : [0.3,0.5,0]
+        },
+        {
+          'text' : "Not much at all",
+          'risk' : [0,0.1,0.7]
+        }
+    ]
+    },
+    {
+      'id': 13,
+      'question' : "What are some things that you're interested in? Please choose three.",
+      'type' : 'selectResponse',
+      'layout' : 'imageGrid',
+      'options' : [
+    "Cars",
+    "Consumer Goods",
+    "Earth Sciences",
+    "Entertainment",
+    "Environment",
+    "Finance",
+    "Gas & Energy",
+    "Healthcare",
+    "Housing",
+    "Social",
+    "Space & Logistics",
+    "Tech"
+    ]
+    },
+    {
+      'id' : 14,
+      'question' : "[investment advice]",
+      'type' : 'noResponse',
+      'layout' : 'text',
+      'options' : []
+    },
+    ]
     
